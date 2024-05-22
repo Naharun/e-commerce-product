@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { Product } from './product.interface';
 
 const productSchema = new Schema<Product>({

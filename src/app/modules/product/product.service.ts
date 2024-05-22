@@ -16,8 +16,19 @@ const getSingleProductFromDB = async (productId: string) => {
   return result;
 };
 
+const updateProductInDB = async (
+  productId: string,
+  updateData: Partial<Product>,
+) => {
+  const result = await ProductModel.findByIdAndUpdate(productId, updateData, {
+    new: true,
+  });
+  return result;
+};
+
 export const ProductService = {
   createProductDB,
   getAllProductFromDB,
   getSingleProductFromDB,
+  updateProductInDB,
 };
