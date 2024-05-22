@@ -10,4 +10,8 @@ router.get('/products/:productId', ProductControllers.getSingleProduct);
 
 router.put('/products/:productId', ProductControllers.updateProduct);
 
+router.delete('/products/:productId', ProductControllers.deleteProduct);
+
+router.get('/products', ProductControllers.searchProducts);
+
 export const ProductRoutes = router;
