@@ -1,22 +1,21 @@
-import { Schema, model, connect } from 'mongoose';
-
+// import { Schema, model, connect } from 'mongoose';
 
 export type Variant = {
-    type: string;
-    value: string;
-}
+  type: string;
+  value: string;
+};
 
 export type Inventory = {
-    quantity: number;
-    inStock: boolean;
-}
+  quantity: number;
+  inStock: boolean;
+};
 
 export type Product = {
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    tags: string[];
-    variants: Variant[];
-    inventory: Inventory;
-}
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  tags: string[];
+  variants: Variant[];
+  inventory: Inventory;
+};
