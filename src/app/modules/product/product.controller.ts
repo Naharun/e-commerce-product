@@ -3,12 +3,26 @@ import { ProductService } from './product.service';
 
 const createProduct = async (req: Request, res: Response) => {
   try {
-    const product = req.body;
-    const result = ProductService.createProductDB(product);
+    const { product: productData } = req.body;
+    const result = await ProductService.createProductDB(productData);
 
     res.status(200).json({
       success: true,
       message: 'Product is created successfully',
+      data: result,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getAllProduct = async (req: Request, res: Response) => {
+  try {
+    const result = await ProductService.getAllProductFromDB();
+
+    res.status(200).json({
+      success: true,
+      message: 'Products are  successfully',
       data: result,
     });
   } catch (err) {
