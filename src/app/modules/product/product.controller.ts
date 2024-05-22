@@ -22,7 +22,7 @@ const getAllProduct = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: 'Products are  successfully',
+      message: 'Products are retrieve successfully',
       data: result,
     });
   } catch (err) {
@@ -32,4 +32,5 @@ const getAllProduct = async (req: Request, res: Response) => {
 
 export const ProductControllers = {
   createProduct,
+  getAllProduct,
 };
