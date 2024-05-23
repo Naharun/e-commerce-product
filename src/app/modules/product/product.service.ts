@@ -1,21 +1,25 @@
 import { Product } from './product.interface';
 import ProductModel from './product.model';
 
+//post
 const createProductDB = async (product: Product) => {
   const result = await ProductModel.create(product);
   return result;
 };
 
+//get
 const getAllProductFromDB = async () => {
   const result = await ProductModel.find();
   return result;
 };
 
+//get a single product
 const getSingleProductFromDB = async (productId: string) => {
   const result = await ProductModel.findById(productId);
   return result;
 };
 
+//update product
 const updateProductInDB = async (
   productId: string,
   updateData: Partial<Product>,
@@ -26,6 +30,7 @@ const updateProductInDB = async (
   return result;
 };
 
+//delete product
 const deleteProductFromDB = async (productId: string) => {
   await ProductModel.findByIdAndDelete(productId);
 };
